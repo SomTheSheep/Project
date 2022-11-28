@@ -58,7 +58,7 @@ def ex():
 User = tkinter.Button(top, image = finalimg , command = ex )
 User.grid(column = 1, row = 0)
 
-re = tkinter.Button(top, image = res)
+re = tkinter.Button(top, image = res, command = ex)
 re.grid()
 
 
