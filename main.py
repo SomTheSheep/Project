@@ -37,9 +37,15 @@ res = ImageTk.PhotoImage(im.results)
 l2 = tkinter.Label(top, text ="")
 l2.grid()
 
-
-en = tkinter.Entry(top, textvariable = store)
+en_font = ('Freestyle Script', 28)
+en_font2 = ('Freestyle Script', 26)
+en = tkinter.Label(top, text = "WELCOME   TO   THE   STUDENT   DATABASE", font = en_font)
 en.grid()
+
+EN2 = tkinter.Label(top, text = "Please click on your desired icon", font = en_font2)
+EN2.grid()
+
+tkinter.Label(top, text='').grid()
 
 
 def Yep():
@@ -48,14 +54,18 @@ def Yep():
     l2.configure(text=out)
 
 
-B = tkinter.Button(top, image = att, command=Yep)
-B.grid()
+
+
 
 def ex():
-    tkinter.messagebox.showinfo(title = 'Profile', message = "Button serves no function as of now")
+    tkinter.messagebox.showinfo(title = 'In Progress', message = "Button serves no function as of now")
+B = tkinter.Button(top, image = att, command=ex)
+B.grid()
 
 User = tkinter.Button(top, image = finalimg , command = ex )
 User.grid(column = 1, row = 0)
+
+tkinter.Label(top, text='').grid()
 
 re = tkinter.Button(top, image = res, command = ex)
 re.grid()
