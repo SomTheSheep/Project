@@ -1,5 +1,4 @@
 import tkinter
-import tkinter.messagebox
 from tkinter import ttk
 from tkinter import *
 from PIL import Image, ImageTk
@@ -11,7 +10,7 @@ store = tkinter.StringVar()
 top.geometry('1920x1080')
 
 top.grid_columnconfigure(0, weight = 1)
-top.title("PESU")
+top.title("DATABASE")
 
 finalphoto = ImageTk.PhotoImage(im.realphoto)
 
@@ -46,15 +45,6 @@ EN2 = tkinter.Label(top, text = "Please click on your desired icon", font = en_f
 EN2.grid()
 
 tkinter.Label(top, text='').grid()
-
-
-def Yep():
-    
-    out = en.get()
-    l2.configure(text=out)
-
-
-
 
 
 def ex():

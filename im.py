@@ -10,7 +10,6 @@ attphoto = attphoto.resize((85,85))
 
 
 photo = Image.open('database3.png')
-#realphoto = photo.resize((170,170))
 realphoto = photo.resize((230,128))
 
 

@@ -1,8 +1,29 @@
 from tkinter import *
-from tkinter import ttk
-root = Tk()
-frm = ttk.Frame(root, padding=10)
-frm.grid()
-ttk.Label(frm, text="Hello World!").grid(column=5, row=10)
-ttk.Button(frm, text="Quit", command=root.destroy).grid(column=10, row=10)
-root.mainloop()
+from functools import partial
+
+def Login(username, password):
+	print("username entered :", username.get())
+	print("password entered :", password.get())
+	return
+
+
+tkWindow = Tk()  
+tkWindow.geometry('1920 x 1080')  
+tkWindow.title('Student login portal')
+
+
+usernameLabel = Label(tkWindow, text="SRN").grid(row=0, column=0)
+username = StringVar()
+usernameEntry = Entry(tkWindow, textvariable=username).grid(row=0, column=1)  
+
+
+passwordLabel = Label(tkWindow,text="Password").grid(row=1, column=0)  
+password = StringVar()
+passwordEntry = Entry(tkWindow, textvariable=password, show='*').grid(row=1, column=1)  
+
+Login = partial(Login, username, password)
+
+
+loginButton = Button(tkWindow, text="Login", command=Login).grid(row=4, column=0)  
+
+tkWindow.mainloop()
