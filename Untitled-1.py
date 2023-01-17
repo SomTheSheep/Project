@@ -8,13 +8,15 @@ def Login(username, password):
 
 
 tkWindow = Tk()  
-tkWindow.geometry('1920 x 1080')  
+tkWindow.geometry('1920x1080')  
 tkWindow.title('Student login portal')
 
 
-usernameLabel = Label(tkWindow, text="SRN").grid(row=0, column=0)
+usernameLabel = Label(tkWindow, text="SRN")
+usernameLabel.grid(row=0, column=0)
 username = StringVar()
-usernameEntry = Entry(tkWindow, textvariable=username).grid(row=0, column=1)  
+usernameEntry = Entry(tkWindow, textvariable=username)
+usernameEntry.grid(row=0, column=1)  
 
 
 passwordLabel = Label(tkWindow,text="Password").grid(row=1, column=0)  

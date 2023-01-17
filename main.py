@@ -12,7 +12,7 @@ top.geometry('1920x1080')
 top.grid_columnconfigure(0, weight = 1)
 top.title("DATABASE")
 
-finalphoto = ImageTk.PhotoImage(im.realphoto)
+finalphoto = ImageTk.PhotoImage(im.photo)
 
 
 
