@@ -42,6 +42,9 @@ fri = ImageTk.PhotoImage(im.friday)
 
 cal = ImageTk.PhotoImage(im.calendar)
 
+jan = ImageTk.PhotoImage(im.january)
+feb = ImageTk.PhotoImage(im.february)
+
 
 
 
@@ -135,7 +138,7 @@ tkinter.Label(top, text ='Timetable', font = en_font2).grid()
 def caldisplay():
     newnew = Toplevel(top)
     menubar = Menu(newnew)  
-    menubar.add_command(label="Monday", command=print("True"))
+    menubar.add_command(label="January", command=print("True"))
     menubar.add_command(label="Quit!", command=newnew.quit)  
   
     # display the menu  

@@ -41,4 +41,7 @@ thursday = Image.open('thursday.png')
 
 friday = Image.open('Friday.png')
 
+january = Image.open('january.png')
+february = Image.open('february.png')
+
     
