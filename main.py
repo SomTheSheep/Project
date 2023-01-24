@@ -34,6 +34,8 @@ res = ImageTk.PhotoImage(im.results)
 time = ImageTk.PhotoImage(im.timetable)
 timeg = ImageTk.PhotoImage(im.timetableex)
 
+cal = ImageTk.PhotoImage(im.calendar)
+
 
 
 
@@ -96,6 +98,18 @@ tkinter.Label(top, text='').grid()
 
 tt = tkinter.Button(top, image = time, command = t)
 tt.grid()
+
+tkinter.Label(top, text ='').grid()
+def caldisplay():
+    newnew = Toplevel(top)
+    menubar = Menu(newnew)  
+    menubar.add_command(label="Monday", command=print("True"))
+    menubar.add_command(label="Quit!", command=newnew.quit)  
+  
+    # display the menu  
+    newnew.config(menu=menubar)  
+cale = tkinter.Button(top, image = cal, command = caldisplay)
+cale.grid()
 
 
 

@@ -24,5 +24,7 @@ timetable = timetable.resize((85,85))
 
 timetableex = Image.open('timetableex.png')
 
+calendar = Image.open('calendar.png')
+calendar = calendar.resize((85,85))
 
     
