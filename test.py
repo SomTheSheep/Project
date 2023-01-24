@@ -1,34 +1,48 @@
+# This will import all the widgets
+# and modules which are available in
+# tkinter and ttk module
 from tkinter import *
-from tkinter import font
+from tkinter.ttk import *
 
-root = Tk()
-root.title('Font Families')
-fonts=list(font.families())
-fonts.sort()
+# creates a Tk() object
+master = Tk()
 
-def populate(frame):
-    '''Put in the fonts'''
-    listnumber = 1
-    for item in fonts:
-        label = "listlabel" + str(listnumber)
-        label = Label(frame,text=item,font=(item, 16)).pack()
-        listnumber += 1
+# sets the geometry of main
+# root window
+master.geometry("200x200")
 
-def onFrameConfigure(canvas):
-    '''Reset the scroll region to encompass the inner frame'''
-    canvas.configure(scrollregion=canvas.bbox("all"))
 
-canvas = Canvas(root, borderwidth=0, background="#ffffff")
-frame = Frame(canvas, background="#ffffff")
-vsb = Scrollbar(root, orient="vertical", command=canvas.yview)
-canvas.configure(yscrollcommand=vsb.set)
+# function to open a new window
+# on a button click
+def openNewWindow():
+	
+	# Toplevel object which will
+	# be treated as a new window
+	newWindow = Toplevel(master)
 
-vsb.pack(side="right", fill="y")
-canvas.pack(side="left", fill="both", expand=True)
-canvas.create_window((4,4), window=frame, anchor="nw")
+	# sets the title of the
+	# Toplevel widget
+	newWindow.title("New Window")
 
-frame.bind("<Configure>", lambda event, canvas=canvas: onFrameConfigure(canvas))
+	# sets the geometry of toplevel
+	newWindow.geometry("200x200")
 
-populate(frame)
+	# A Label widget to show in toplevel
+	Label(newWindow,
+		text ="This is a new window").pack()
 
-root.mainloop()
+
+label = Label(master,
+			text ="This is the main window")
+
+label.pack(pady = 10)
+
+# a button widget which will open a
+# new window on button click
+btn = Button(master,
+			text ="Click to open a new window",
+			command = openNewWindow)
+btn.pack(pady = 10)
+
+# mainloop, runs infinitely
+mainloop()

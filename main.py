@@ -5,6 +5,7 @@ from PIL import Image, ImageTk
 import im
 
 
+
 top = tkinter.Tk()
 store = tkinter.StringVar()
 top.geometry('1920x1080')
@@ -30,6 +31,9 @@ att = ImageTk.PhotoImage(im.attphoto)
 
 res = ImageTk.PhotoImage(im.results)
 
+time = ImageTk.PhotoImage(im.timetable)
+timeg = ImageTk.PhotoImage(im.timetableex)
+
 
 
 
@@ -52,13 +56,46 @@ def ex():
 B = tkinter.Button(top, image = att, command=ex)
 B.grid()
 
-User = tkinter.Button(top, image = finalimg , command = ex )
+def Prof():
+     
+    
+    newWindow = Toplevel(top)
+ 
+    
+    newWindow.title("Student Info")
+ 
+    
+    newWindow.geometry("400x400")
+ 
+    
+    Label(newWindow,
+          text =" Name: \nUSN:").grid()
+User = tkinter.Button(top, image = finalimg , command = Prof )
 User.grid(column = 1, row = 0)
+
+
+def t():
+    new = Toplevel(top)
+ 
+    
+    new.title("Time Table")
+ 
+    
+    new.geometry("1242x663")
+ 
+    
+    Label(new,
+          image=timeg).grid()
 
 tkinter.Label(top, text='').grid()
 
 re = tkinter.Button(top, image = res, command = ex)
 re.grid()
+
+tkinter.Label(top, text='').grid()
+
+tt = tkinter.Button(top, image = time, command = t)
+tt.grid()
 
 
 

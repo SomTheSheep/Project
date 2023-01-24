@@ -22,4 +22,7 @@ results = results.resize((85,85))
 timetable = Image.open('timetable.png')
 timetable = timetable.resize((85,85))
 
+timetableex = Image.open('timetableex.png')
+
+
     
