@@ -8,7 +8,7 @@ def validateLogin(username, password):
 
 tkWindow = Tk()  
 tkWindow.geometry('400x150')  
-tkWindow.title('Student login')
+tkWindow.title('USN')
 
 
 usernameLabel = Label(tkWindow, text="Student Name").grid(row=0, column=0)

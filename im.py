@@ -27,4 +27,18 @@ timetableex = Image.open('timetableex.png')
 calendar = Image.open('calendar.png')
 calendar = calendar.resize((85,85))
 
+monday = Image.open('monday.png')
+
+
+tuesday = Image.open('tuesday.png')
+
+
+wednesday = Image.open('wednesday.png')
+
+
+thursday = Image.open('thursday.png')
+
+
+friday = Image.open('Friday.png')
+
     

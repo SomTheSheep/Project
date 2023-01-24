@@ -34,6 +34,12 @@ res = ImageTk.PhotoImage(im.results)
 time = ImageTk.PhotoImage(im.timetable)
 timeg = ImageTk.PhotoImage(im.timetableex)
 
+mon = ImageTk.PhotoImage(im.monday)
+tues = ImageTk.PhotoImage(im.tuesday)
+wed = ImageTk.PhotoImage(im.wednesday)
+thurs = ImageTk.PhotoImage(im.thursday)
+fri = ImageTk.PhotoImage(im.friday)
+
 cal = ImageTk.PhotoImage(im.calendar)
 
 
@@ -44,10 +50,11 @@ l2.grid()
 
 en_font = ('Freestyle Script', 28)
 en_font2 = ('Freestyle Script', 26)
+en_font3 = ('Arial Black', 26)
 en = tkinter.Label(top, text = "WELCOME   TO   THE   STUDENT   DATABASE", font = en_font)
 en.grid()
 
-EN2 = tkinter.Label(top, text = "Please click on your desired icon", font = en_font2)
+EN2 = tkinter.Label(top, text = "Please click on your desired option", font = en_font2)
 EN2.grid()
 
 tkinter.Label(top, text='').grid()
@@ -76,30 +83,55 @@ User = tkinter.Button(top, image = finalimg , command = Prof )
 User.grid(column = 1, row = 0)
 
 
-def t():
-    new = Toplevel(top)
- 
-    
-    new.title("Time Table")
- 
-    
-    new.geometry("1242x663")
- 
-    
-    Label(new,
-          image=timeg).grid()
 
-tkinter.Label(top, text='').grid()
+def t():
+    def monday():
+        
+        tkinter.Label(new, text = 'Monday', font = en_font3).grid(row = 0, column = 0)
+        
+        tkinter.Label(new, image = mon).grid(row = 1, column = 0)
+    def tuesday():
+        
+        tkinter.Label(new, text = 'Tuesday', font = en_font3).grid(row = 0, column = 0)
+        tkinter. Label(new, image = tues).grid(row = 1, column = 0)
+    def wednesday():
+        tkinter.Label(new, text = 'Wednesday', font = en_font3).grid(row = 0, column = 0)
+        tkinter.Label(new, image = wed).grid(row = 1, column = 0)
+    def thursday():
+        tkinter.Label(new,text = 'Thursday', font = en_font3).grid(row = 0, column = 0)
+        tkinter.Label(new, image = thurs).grid(row = 1, column = 0)
+    def friday():
+        tkinter.Label(new, text = 'Friday', font = en_font3).grid(row = 0, column = 0)
+        tkinter.Label(new, image = fri).grid(row = 1, column = 0)
+    
+        
+
+    new = Toplevel(top)
+    new.columnconfigure(0, weight = 1)
+    new.geometry('1920x1080')
+    menubar = Menu(new)  
+    menubar.add_command(label="Monday", command=monday)
+    menubar.add_command(label="Tuesday", command=tuesday)  
+    menubar.add_command(label='Wednesay', command = wednesday)
+    menubar.add_command(label='Thursday', command=thursday)
+    menubar.add_command(label='Friday', command=friday)
+    
+    
+  
+    # display the menu  
+    new.config(menu=menubar) 
+
+tkinter.Label(top, text='Attendance', font = en_font2).grid()
 
 re = tkinter.Button(top, image = res, command = ex)
 re.grid()
 
-tkinter.Label(top, text='').grid()
+tkinter.Label(top, text='Exam Results', font = en_font2).grid()
 
 tt = tkinter.Button(top, image = time, command = t)
 tt.grid()
 
-tkinter.Label(top, text ='').grid()
+tkinter.Label(top, text ='Timetable', font = en_font2).grid()
 def caldisplay():
     newnew = Toplevel(top)
     menubar = Menu(newnew)  
@@ -110,7 +142,8 @@ def caldisplay():
     newnew.config(menu=menubar)  
 cale = tkinter.Button(top, image = cal, command = caldisplay)
 cale.grid()
+tkinter.Label(top, text = 'Calendar', font = en_font2).grid()
 
 
 
-top.mainloop()
+top.mainloop() 
