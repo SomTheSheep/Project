@@ -44,4 +44,8 @@ friday = Image.open('Friday.png')
 january = Image.open('january.png')
 february = Image.open('february.png')
 
+p = Image.open('s8.png')
+p = p.resize((126,126))
+
+
     

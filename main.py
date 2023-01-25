@@ -4,6 +4,8 @@ from tkinter import *
 from PIL import Image, ImageTk
 import im
 
+import login
+
 
 
 top = tkinter.Tk()
@@ -11,13 +13,13 @@ store = tkinter.StringVar()
 top.geometry('1920x1080')
 
 top.grid_columnconfigure(0, weight = 1)
-top.title("DATABASE")
+top.title("Database")
 
 finalphoto = ImageTk.PhotoImage(im.photo)
 
 
 
-quack = Label(image = finalphoto)
+quack = Label(top, image = finalphoto)
 quack.grid(column = 0, row = 0)
 
 
@@ -45,6 +47,8 @@ cal = ImageTk.PhotoImage(im.calendar)
 jan = ImageTk.PhotoImage(im.january)
 feb = ImageTk.PhotoImage(im.february)
 
+st = ImageTk.PhotoImage(im.p)
+
 
 
 
@@ -65,7 +69,14 @@ tkinter.Label(top, text='').grid()
 
 def ex():
     tkinter.messagebox.showinfo(title = 'In Progress', message = "Button serves no function as of now")
-B = tkinter.Button(top, image = att, command=ex)
+def atte():
+    newnewnew = Toplevel(top)
+    newnewnew.title("Attendance")
+    newnewnew.geometry('200x40')
+    Label(newnewnew, text = "You have attended 91/100 classes").grid()
+    Label(newnewnew, text = "Your attendance is: 91%").grid()
+
+B = tkinter.Button(top, image = att, command=atte)
 B.grid()
 
 def Prof():
@@ -75,14 +86,15 @@ def Prof():
  
     
     newWindow.title("Student Info")
+    
  
     
-    newWindow.geometry("400x400")
+    newWindow.geometry("300x300")
+    Label(newWindow, image = st).grid()
  
     
-    Label(newWindow,
-          text =" Name: \nUSN:").grid()
-User = tkinter.Button(top, image = finalimg , command = Prof )
+    tkinter.Label(newWindow,text ="Name:Rohan \nUSN:SC2022R01").grid()
+User = tkinter.Button(top, image = st , command = Prof )
 User.grid(column = 1, row = 0)
 
 
@@ -111,6 +123,7 @@ def t():
 
     new = Toplevel(top)
     new.columnconfigure(0, weight = 1)
+    new.title('Time Table')
     new.geometry('1920x1080')
     menubar = Menu(new)  
     menubar.add_command(label="Monday", command=monday)
@@ -118,6 +131,7 @@ def t():
     menubar.add_command(label='Wednesay', command = wednesday)
     menubar.add_command(label='Thursday', command=thursday)
     menubar.add_command(label='Friday', command=friday)
+    menubar.add_command(label="Quit!", command=new.destroy)
     
     
   
@@ -126,8 +140,21 @@ def t():
 
 tkinter.Label(top, text='Attendance', font = en_font2).grid()
 
-re = tkinter.Button(top, image = res, command = ex)
+
+def results():
+    real = Toplevel(top)
+    real.title('Results')
+    real.geometry('250x200')
+    Label(real, text="Your physics marks are: 75/100").grid()
+    Label(real, text ="Your Maths marks are: 98/100").grid()
+    Label(real, text ="Your Computer Science marks are: 91/100").grid()
+    Label(real, text ="Your Chemistry marks are: 83/100").grid()
+    Label(real, text = "Your Geography marks are: 96/100").grid()
+    Label(real, text = "Your History marks are: 91/100").grid()
+    Label(real, text = "Your 2nd language marks are: 98/100").grid()
+re = tkinter.Button(top, image = res, command = results)
 re.grid()
+    
 
 tkinter.Label(top, text='Exam Results', font = en_font2).grid()
 
@@ -136,10 +163,14 @@ tt.grid()
 
 tkinter.Label(top, text ='Timetable', font = en_font2).grid()
 def caldisplay():
+    def ja():
+        Label(newnew, image = jan).grid()
     newnew = Toplevel(top)
+    newnew.geometry('900x400')
+    newnew.title("Calendar of events")
     menubar = Menu(newnew)  
-    menubar.add_command(label="January", command=print("True"))
-    menubar.add_command(label="Quit!", command=newnew.quit)  
+    menubar.add_command(label="January", command=ja)
+    menubar.add_command(label="Quit!", command=newnew.destroy)  
   
     # display the menu  
     newnew.config(menu=menubar)  

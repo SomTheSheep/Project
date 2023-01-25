@@ -3,7 +3,8 @@ from functools import partial
 
 
 def validateLogin(username, password):
-	import main
+	#exec(open('main.py').read())
+	tkWindow.destroy()
 
 
 tkWindow = Tk()  
